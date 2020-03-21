@@ -17,4 +17,4 @@ BLUE='\033[0;34m'
 #echo -e "${BLUE}FOLDER_PATH: $4${NC}"
 
 echo -e "${YELLOW}=========================> REMARK CHECK <=========================${NC}"
-find -name \*.md -not -path "./node_modules/*" -exec ./node_modules/.bin/remark {} \;
+find -name \*.md -not -path "./node_modules/*" -exec remark {} \;
