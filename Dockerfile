@@ -14,5 +14,5 @@ RUN apk add --no-cache bash=~5.0.11-r1 git~=2.24 \
 #COPY .git /app/.git
 COPY entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
-#ENTRYPOINT ["/app/entrypoint.sh"]
-ENTRYPOINT ["bash"]
+ENTRYPOINT ["/app/entrypoint.sh"]
+#ENTRYPOINT ["bash"]
