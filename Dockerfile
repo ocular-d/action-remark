@@ -2,7 +2,7 @@ FROM node:12.16.1-alpine3.11
 
 LABEL "maintainer"="ocular-d"
 
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json .remarkrc.yaml ./
 
 RUN apk add --no-cache bash=~5.0.11-r1 \
     && npm install --no-cache \
