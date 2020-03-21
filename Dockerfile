@@ -4,7 +4,7 @@ LABEL "maintainer"="ocular-d"
 
 COPY package.json package-lock.json .remarkrc.yaml ./
 
-RUN apk add --no-cache bash=~5.0.11-r1 \
+RUN apk add --no-cache bash=~5.0.11-r1 git~=2.24 \
     && npm install --no-cache \
     && npm link remark-cli
 
