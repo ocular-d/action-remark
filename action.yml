@@ -1,0 +1,12 @@
+name: 'remark'
+description: 'Validate Markdown files.'
+author: 'ocular-de'
+branding:
+  icon: 'link'
+  color: 'green'
+  folder-path:
+    description: 'Specify path to a custom folder where your markdown files are located.'
+    default: '.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
