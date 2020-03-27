@@ -1,5 +1,5 @@
 on: push
-name: New workflow
+name: Remark Lint
 jobs:
   remark:
     runs-on: ubuntu-latest
