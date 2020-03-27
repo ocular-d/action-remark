@@ -31,4 +31,4 @@ RUN npm install -g \
 
 
 ENTRYPOINT ["remark"]
-ENTRYPOINT ["bash"]
+#ENTRYPOINT ["bash"]
