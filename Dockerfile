@@ -20,11 +20,15 @@ LABEL "maintainer"="ocular-d"
 #---
 FROM node:12.16.1-alpine3.11
 
-WORKDIR /lint
-COPY package.json package-lock.json .remarkrc.yaml ./
-RUN npm install \
+RUN npm install -g \
+        remark-cli \
+        remark-lint \
+        remark-preset-lint-consistent \
+        remark-preset-lint-markdown-style-guide \
+        remark-preset-lint-recommended \
+        remark-validate-links \
     && apk add --no-cache git~=2.24 bash
 
-WORKDIR /lint/input
-ENTRYPOINT ["../node_modules/.bin/remark"]
-#ENTRYPOINT ["bash"]
+
+ENTRYPOINT ["remark"]
+ENTRYPOINT ["bash"]
