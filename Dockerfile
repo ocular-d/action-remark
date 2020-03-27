@@ -26,5 +26,5 @@ RUN npm install \
     && apk add --no-cache git~=2.24 bash
 
 WORKDIR /lint/input
-ENTRYPOINT ["/../node_modules/.bin/remark"]
+ENTRYPOINT ["../node_modules/.bin/remark"]
 #ENTRYPOINT ["bash"]
