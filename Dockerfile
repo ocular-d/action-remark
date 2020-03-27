@@ -18,7 +18,6 @@ LABEL "maintainer"="ocular-d"
 #ENTRYPOINT ["/app/entrypoint.sh"]
 #ENTRYPOINT ["bash"]
 #---
-FROM node:12.16.1-alpine3.11
 
 RUN npm install -g \
         remark-cli \
@@ -29,6 +28,8 @@ RUN npm install -g \
         remark-validate-links \
     && apk add --no-cache git~=2.24 bash
 
-
-ENTRYPOINT ["remark"]
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+#ENTRYPOINT ["remark"]
 #ENTRYPOINT ["bash"]
