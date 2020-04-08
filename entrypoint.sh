@@ -17,4 +17,5 @@ BLUE='\033[0;34m'
 #echo -e "${BLUE}FOLDER_PATH: $4${NC}"
 
 echo -e "${YELLOW}=========================> REMARK CHECK <=========================${NC}"
-remark --frail md
+#remark --frail md
+find -name \*.md -exec remark --frail {} \;
