@@ -9,7 +9,7 @@ RUN npm install -g \
         remark-preset-lint-markdown-style-guide \
         remark-preset-lint-recommended \
         remark-validate-links \
-    && apk add --no-cache git~=2.24
+    && apk add --no-cache git~=2.24 bash
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
