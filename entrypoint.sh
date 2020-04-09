@@ -20,13 +20,13 @@ FILE=error.log
 echo -e "${YELLOW}=========================> REMARK CHECK <=========================${NC}"
 remark --no-color -q md 2>&1 | tee error.log
 if [ -s "$FILE" ]; then
-    echo "$FILE exist"
-    echo "there was an error"
+    #echo "$FILE exist"
+    #echo "there was an error"
     #echo "::set-output name=status::There was an issue."
     #echo "::error file=error.log ::Something went wrong"
     echo ::set-output name=status::$(cat error.log)
     echo "::error file=error.log ::Something went wrong"
-    #exit 1
+    exit 113
 else
     echo "great, all good"
     echo ::set-output name=status::'Success'
