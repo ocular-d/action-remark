@@ -17,5 +17,12 @@ BLUE='\033[0;34m'
 #echo -e "${BLUE}FOLDER_PATH: $4${NC}"
 
 echo -e "${YELLOW}=========================> REMARK CHECK <=========================${NC}"
-remark --frail md
+if ! remark --frail md
+then
+  echo ::set-output name=status::'There was an issue.'
+  exit 1
+else
+  echo ::set-output name=status::'Success'
+fi
+#remark --frail md
 #find -name \*.md -exec remark --frail {} \;
