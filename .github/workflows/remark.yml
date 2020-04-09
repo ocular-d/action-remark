@@ -6,6 +6,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: remark
+      id: remark
       uses: ./
       with:
         folder-path: 'md'
