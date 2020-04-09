@@ -25,6 +25,7 @@ if [ -s "$FILE" ]; then
     #echo "::set-output name=status::There was an issue."
     #echo "::error file=error.log ::Something went wrong"
     echo ::set-output name=status::$(cat error.log)
+    echo "::error file=error.log ::Something went wrong"
     #exit 1
 else
     echo "great, all good"
