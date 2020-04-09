@@ -11,6 +11,7 @@ BLUE='\033[0;34m'
 #USE_VERBOSE_MODE="$2"
 #CONFIG_FILE="$3"
 #FOLDER_PATH="$4"
+FILE=error.log
 
 #echo -e "${BLUE}USE_QUIET_MODE: $1${NC}"
 #echo -e "${BLUE}USE_VERBOSE_MODE: $2${NC}"
