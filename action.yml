@@ -10,3 +10,6 @@ branding:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+outputs:
+  status:
+    description: 'Status of the command'
