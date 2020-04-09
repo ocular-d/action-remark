@@ -10,3 +10,6 @@ jobs:
       uses: ./
       with:
         folder-path: 'md'
+
+    - name: Display status from remark
+      run: echo "${{ steps.remark.outputs.status }}"
