@@ -11,5 +11,9 @@ jobs:
       with:
         folder-path: 'md'
 
-    - name: Display status from remark
-      run: echo "${{ steps.remark.outputs.status }}"
+    - name: Create commit comment
+      uses: peter-evans/commit-comment@v1
+      with:
+        body: |
+          Result: 
+          ${{ steps.remark.outputs.status }}
