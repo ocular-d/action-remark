@@ -11,9 +11,13 @@ jobs:
       with:
         folder-path: 'md'
 
-    - name: Create commit comment
-      uses: peter-evans/commit-comment@v1
+    - name: Create Issue
+      uses: peter-evans/create-issue-from-file@v2
       with:
-        body: |
-          Result: 
-          ${{ steps.remark.outputs.status }}
+        title: Report
+        content-filepath: ./link-checker/out.md
+        labels: report, automated issue
+
+    - name: Fail if there were link errors
+      run: exit ${{ steps.remark.outputs.exit_code }}
+
