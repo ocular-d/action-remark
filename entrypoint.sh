@@ -22,6 +22,7 @@ remark --no-color -q md 2>&1 | tee error.log
 if [ -s "$FILE" ]; then
     #echo "$FILE exist"
     echo "there was an error"
+    ls -la
     #echo "::set-output name=status::There was an issue."
     #echo "::error file=error.log ::Something went wrong"
     #echo ::set-output name=status::$(cat error.log)
