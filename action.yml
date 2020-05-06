@@ -1,15 +1,9 @@
-name: 'remark'
-description: 'Validate Markdown files.'
-author: 'ocular-de'
+name: 'Remark Action'
+description: 'Validate Markdown with remark.'
+author: 'ocular-d'
 branding:
-  icon: 'link'
+  icon: 'check-square'
   color: 'green'
-  folder-path:
-    description: 'Specify path to a custom folder where your markdown files are located.'
-    default: '.'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-outputs:
-  status:
-    description: 'Status of the command'

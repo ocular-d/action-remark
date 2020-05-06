@@ -1,27 +1,57 @@
-# Notes WIP
+<div align="center">
 
-```shell
-./node_modules/.bin/remark --frail md > log 2>&1
+# Remark GitHub Action
+
+</div>
+
+## Table of Contents
+
+- [About the Project](#📄-about)
+- [Usage](#🚀-usage)
+- [Contributing](#🤝-contributing)
+- [License](#📝-license)
+- [Credits](#🙏-credits)
+
+## 📄 About
+
+[remarklint](https://github.com/remarkjs/remark-lint "Link to remarklint on GitHub") as GitHub Action.
+
+## 🚀 Usage
+
+Add the a workflow file in your repository: `.github/workflows/remark.yml`.
+
+```yml
+on: push
+name: Remark Lint
+jobs:
+  remark:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: remark
+      id: remark
+      uses: ./
+      with:
+        folder-path: 'docs'
+
+    - name: Create Issue
+      if: ${{ steps.remark.outputs.exit_code }}
+      uses: peter-evans/create-issue-from-file@v2
+      with:
+        title: Report
+        content-filepath: error.log
+        labels: report, automated issue
+
+    - name: Fail if there were link errors
+      run: exit ${{ steps.remark.outputs.exit_code }}
 ```
 
-```shell
-$ ./node_modules/.bin/remark --frail md 2>&1 | tee outfile
-md/1.md
-  2:135  warning  Line must be at most 80 characters  maximum-line-length  remark-lint
+## 🤝 Contributing
 
-md/2.md: no issues found
+We are a community effort, and everybody is most welcome to participate!
 
-⚠ 1 warning
-```
+Be it filing bugs, formulating enhancements, creating pull requests, or any other means of contribution, we encourage contributions from everyone.
 
-Add `-q` to only make noise on warning and error
+## 📝 License
 
-```shell
-$ ./node_modules/.bin/remark -q --frail docs 2>&1 | tee outfile
-
-$ ./node_modules/.bin/remark -q --frail md 2>&1 | tee outfile
-md/1.md
-  2:135  warning  Line must be at most 80 characters  maximum-line-length  remark-lint
-
-⚠ 1 warning
-```
+Distributed under the [MIT](https://choosealicense.com/licenses/mit/ "Link to license") license.
