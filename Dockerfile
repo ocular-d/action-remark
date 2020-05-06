@@ -1,6 +1,12 @@
 FROM node:12.16.1-alpine3.11
 
-LABEL "maintainer"="ocular-d"
+LABEL version="0.0.1"
+LABEL maintainer="ocular-d <sven@ocular-d.tech>" \
+      org.label-schema.vendor="Ocular-d" \
+      com.github.actions.name="Remark Action" \
+      com.github.actions.description="Validate your Markdown with remarklint" \
+      com.github.actions.icon="check-square" \
+      com.github.actions.color="green"
 
 RUN npm install -g \
         remark-cli \
