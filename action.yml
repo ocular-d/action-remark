@@ -5,7 +5,7 @@ branding:
   icon: 'check-square'
   color: 'green'
 inputs:
-  check-dir:
+  check_dir:
     description: 'Name of the directory remark should check'
     required: true
     default: 'docs'
