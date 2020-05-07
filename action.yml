@@ -4,6 +4,11 @@ author: 'ocular-d'
 branding:
   icon: 'check-square'
   color: 'green'
+inputs:
+  check-dir:
+    description: 'Name of the directory remark should check'
+    required: true
+    default: 'docs'
 runs:
   using: 'docker'
   image: 'Dockerfile'
