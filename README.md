@@ -32,7 +32,7 @@ jobs:
       id: remark
       uses: ocular-d/action-remark@0.0.2
       with:
-        folder-path: 'docs'
+        check-dir: 'docs'
 
     - name: Create Issue
       if: ${{ steps.remark.outputs.exit_code }}
