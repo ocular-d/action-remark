@@ -9,13 +9,12 @@ LABEL maintainer="ocular-d <sven@ocular-d.tech>" \
       com.github.actions.color="green"
 
 RUN npm install -g \
-        #remark-cli \
-        #remark-lint \
-        #remark-preset-lint-consistent \
-        #remark-preset-lint-markdown-style-guide \
-        #remark-preset-lint-recommended \
-        #remark-validate-links \
-        remark-preset-lint-ocular-d \
+        remark-cli \
+        remark-lint \
+        remark-preset-lint-consistent \
+        remark-preset-lint-markdown-style-guide \
+        remark-preset-lint-recommended \
+        remark-validate-links \
     && apk add --no-cache git~=2.24 bash
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
