@@ -30,7 +30,7 @@ jobs:
     - uses: actions/checkout@master
     - name: remark
       id: remark
-      uses: ocular-d/action-remark@0.0.4
+      uses: ocular-d/action-remark@0.0.6
       with:
         check-dir: 'docs'
 

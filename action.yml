@@ -12,3 +12,5 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.check_dir }}

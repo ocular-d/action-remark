@@ -1,6 +1,6 @@
 FROM node:12.16.1-alpine3.11
 
-LABEL version="0.0.5"
+LABEL version="0.0.6"
 LABEL maintainer="ocular-d <sven@ocular-d.tech>" \
       org.label-schema.vendor="Ocular-d" \
       com.github.actions.name="Remark Action" \
