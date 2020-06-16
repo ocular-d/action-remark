@@ -9,8 +9,7 @@ LABEL maintainer="ocular-d <sven@ocular-d.tech>" \
       com.github.actions.color="green"
 
 RUN npm install -g \
-        remark-cli \
-        remark-preset-lint-ocular-d \
+    ocld-writing \
     && apk add --no-cache git bash
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
