@@ -28,22 +28,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: remark
+    #- name: remark
       id: remark
       uses: ocular-d/action-remark@0.0.9
       with:
         check-dir: 'docs'
 
-    - name: Create Issue
-      if: ${{ steps.remark.outputs.exit_code }}
-      uses: peter-evans/create-issue-from-file@v2
-      with:
-        title: Report
-        content-filepath: error.log
-        labels: report, automated issue
+    # - name: Create Issue
+    #   if: ${{ steps.remark.outputs.exit_code }}
+    #   uses: peter-evans/create-issue-from-file@v2
+    #   with:
+    #     title: Report
+    #     content-filepath: error.log
+    #     labels: report, automated issue
 
-    - name: Fail if there were link errors
-      run: exit ${{ steps.remark.outputs.exit_code }}
+    # - name: Fail if there were lint errors
+    #   run: exit ${{ steps.remark.outputs.exit_code }}
 ```
 
 ## 🤝 Contributing
