@@ -29,5 +29,5 @@ jobs:
         ls -la
 
     # Runs a single command using the runners shell
-    #- name: Container
-    #  uses: docker://testthedocs/rocl
+    - name: Container
+      uses: docker://testthedocs/rocl docs
