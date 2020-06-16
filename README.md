@@ -27,23 +27,23 @@ jobs:
   remark:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    #- name: remark
-      id: remark
-      uses: ocular-d/action-remark@0.0.9
-      with:
-        check-dir: 'docs'
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Running Remark
+        uses: ocular-d/action-remark@0.0.10
+        with:
+          check_dir: 'md'
 
-    # - name: Create Issue
-    #   if: ${{ steps.remark.outputs.exit_code }}
-    #   uses: peter-evans/create-issue-from-file@v2
-    #   with:
-    #     title: Report
-    #     content-filepath: error.log
-    #     labels: report, automated issue
+      - name: Create Issue
+        if: ${{ steps.remark.outputs.exit_code }}
+        uses: peter-evans/create-issue-from-file@v2
+        with:
+          title: Report
+          content-filepath: error.log
+          labels: report, automated issue
 
-    # - name: Fail if there were lint errors
-    #   run: exit ${{ steps.remark.outputs.exit_code }}
+      - name: Fail if there were lint errors
+        run: exit ${{ steps.remark.outputs.exit_code }}
 ```
 
 ## 🤝 Contributing

@@ -19,5 +19,5 @@ jobs:
           content-filepath: error.log
           labels: report, automated issue
 
-      - name: Fail if there were link errors
+      - name: Fail if there were lint errors
         run: exit ${{ steps.remark.outputs.exit_code }}
