@@ -10,9 +10,14 @@ LABEL maintainer="ocular-d <sven@ocular-d.tech>" \
 
 RUN npm install -g \
     remark \
-    ocld-writing \
+    remark-cli \
+    remark-preset-lint-consistent \
+    remark-preset-lint-markdown-style-guide \
+    remark-preset-lint-recommended \
+    remark-validate-links \
     && apk add --no-cache git bash
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+#ENTRYPOINT ["/bin/bash"]
