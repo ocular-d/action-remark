@@ -11,7 +11,8 @@ RED='\033[0;31m'
 FILE=error.log
 
 echo -e "${YELLOW}=========================> REMARK CHECK <=========================${NC}"
-remark --no-color -q $1 2>&1 | tee error.log
+./node_modules/.bin/remark --no-color -q $1 2>&1 | tee error.log
+#remark --no-color -q $1 2>&1 | tee error.log
 if [ -s "$FILE" ]; then
     echo -e "${RED}Ooh, there was an error${NC}"
     echo ::set-output name=exit_code::1

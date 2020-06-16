@@ -8,20 +8,18 @@ LABEL maintainer="ocular-d <sven@ocular-d.tech>" \
       com.github.actions.icon="check-square" \
       com.github.actions.color="green"
 
-RUN npm install -g \
-    remark \
-    remark-cli \
-    remark-preset-lint-consistent \
-    remark-preset-lint-markdown-style-guide \
-    remark-preset-lint-recommended \
-    remark-validate-links \
-    remark-lint-list-item-indent \
-    remark-lint-no-shell-dollars \
-    remark-lint-maximum-line-length \
-    remark-lint-maximum-heading-length \
+RUN mkdir -p /srv/app/node_modules && chown -R node:node /srv/app \
     && apk add --no-cache git bash
 
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
-#ENTRYPOINT ["/bin/bash"]
+WORKDIR /srv/app
+
+COPY --chown=node:node package*.json ./
+COPY --chown=node:node entrypoint.sh /srv/app/entrypoint.sh
+
+USER node
+
+RUN npm install \
+    && chmod +x entrypoint.sh
+
+#ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash"]
