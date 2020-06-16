@@ -30,4 +30,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Container
-      uses: docker://testthedocs/rocl docs
+      uses: docker://testthedocs/rocl
+      with:
+        entrypoint: /srv/app/entrypoint.sh
+        args: docs
