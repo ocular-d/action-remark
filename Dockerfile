@@ -1,4 +1,4 @@
-FROM node:12.16.1-alpine3.11
+FROM node:12-alpine3.12
 
 LABEL version="0.0.9"
 LABEL maintainer="ocular-d <sven@ocular-d.tech>" \
@@ -10,16 +10,8 @@ LABEL maintainer="ocular-d <sven@ocular-d.tech>" \
 
 RUN npm install -g \
         remark-cli \
-        remark-lint \
-        remark-preset-lint-consistent \
-        remark-preset-lint-markdown-style-guide \
-        remark-preset-lint-recommended \
-        remark-validate-links \
-        remark-lint-list-item-indent \
-        remark-lint-maximum-line-length \
-        remark-lint-no-shell-dollars \
-        remark-lint-maximum-heading-length \
-    && apk add --no-cache git~=2.24 bash
+        remark-preset-lint-ocular-d \
+    && apk add --no-cache git bash
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
