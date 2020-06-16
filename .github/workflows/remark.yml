@@ -9,7 +9,7 @@ jobs:
       - name: Running Remark
         uses: ./
         with:
-          check-dir: 'md'
+          check_dir: 'md'
 
       - name: Create Issue
         if: ${{ steps.remark.outputs.exit_code }}
