@@ -18,7 +18,6 @@ RUN npm install -g \
     remark-lint-list-item-indent \
     remark-lint-no-shell-dollars \
     remark-lint-maximum-line-length \
-    
     && apk add --no-cache git bash
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
