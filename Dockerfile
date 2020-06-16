@@ -15,6 +15,7 @@ RUN npm install -g \
     remark-preset-lint-markdown-style-guide \
     remark-preset-lint-recommended \
     remark-validate-links \
+    remark-lint-list-item-indent \
     && apk add --no-cache git bash
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
