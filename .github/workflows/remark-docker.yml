@@ -23,6 +23,11 @@ jobs:
     - name: Checkout source
       uses: actions/checkout@v2
 
+    - name: Show details
+      run: |
+        pwd
+        ls -la
+
     # Runs a single command using the runners shell
-    - name: Container
-      uses: docker://testthedocs/rocl
+    #- name: Container
+    #  uses: docker://testthedocs/rocl
