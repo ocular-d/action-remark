@@ -9,6 +9,7 @@ LABEL maintainer="ocular-d <sven@ocular-d.tech>" \
       com.github.actions.color="green"
 
 RUN npm install -g \
+    remark \
     ocld-writing \
     && apk add --no-cache git bash
 
