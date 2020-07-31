@@ -35,11 +35,11 @@ jobs:
       with:
         args: md
 
-    - name: Create Issue Via Docker Test
+    - name: Create Issue
       if: ${{ steps.remark.outputs.exit_code }}
       uses: peter-evans/create-issue-from-file@v2
       with:
-        title: Remark Issue
+        title: Remark Issue Docker
         content-filepath: error.log
         labels: report, automated issue
 
