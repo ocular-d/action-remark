@@ -30,6 +30,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Container Test
+      id: remark
       uses: docker://testthedocs/rocl:0.6
       with:
         args: md
