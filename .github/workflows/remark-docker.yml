@@ -30,7 +30,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Container Test
-      uses: docker://testthedocs/rocl:0.5
+      uses: docker://testthedocs/rocl:0.6
       #uses: docker://zemanlx/remark-lint
       with:
-        args: docs
+        args: md

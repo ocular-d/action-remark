@@ -16,7 +16,7 @@ jobs:
         if: ${{ steps.remark.outputs.exit_code }}
         uses: peter-evans/create-issue-from-file@v2
         with:
-          title: Report
+          title: Remark Issue
           content-filepath: error.log
           labels: report, automated issue
 
