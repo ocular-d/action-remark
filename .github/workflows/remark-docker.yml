@@ -31,6 +31,16 @@ jobs:
     # Runs a single command using the runners shell
     - name: Container Test
       uses: docker://testthedocs/rocl:0.6
-      #uses: docker://zemanlx/remark-lint
       with:
         args: md
+
+    - name: Create Issue Via Docker Test
+      if: ${{ steps.remark.outputs.exit_code }}
+      uses: peter-evans/create-issue-from-file@v2
+      with:
+        title: Remark Issue
+        content-filepath: error.log
+        labels: report, automated issue
+
+    - name: Fail if there were lint errors
+      run: exit ${{ steps.remark.outputs.exit_code }}
